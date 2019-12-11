@@ -1,0 +1,173 @@
+<html>
+<head>
+    <title>JavaScript Form Validation</title>
+</head>
+<body>
+    <script>
+        function validateForm() {
+            inFirstName = document.getElementById("firstName").value
+            inLastName = document.getElementById("lastName").value
+            inEmailAddress = document.getElementById("emailAddress").value
+            inTelephoneNumber = document.getElementById("telephoneNumber").value
+            inComments = document.getElementById("comments").value
+            result = true
+
+            if (inFirstName == "") {
+                document.getElementById("lblFirstName").style.backgroundColor = "red"
+                result = false
+            } else { 
+                document.getElementById("lblFirstName").style.backgroundColor = "lightgrey"
+                result = true
+            }
+
+            if (inLastName == "") {
+                document.getElementById("lblLastName").style.backgroundColor = "red"
+                result = false
+            } else {
+                document.getElementById("lblLastName").style.backgroundColor = "lightgrey"
+                result = true
+            }
+
+            if (inEmailAddress == "") {
+                document.getElementById("lblEmail").style.backgroundColor = "red"
+                result = false
+            } else {
+                document.getElementById("lblEmail").style.backgroundColor = "lightgrey"
+                result = true
+            }
+
+            if (inTelephoneNumber == "") {
+                document.getElementById("lblTelephone").style.backgroundColor = "red"
+                result = false
+            } else {
+                document.getElementById("lblTelephone").style.backgroundColor = "lightgrey"
+                result = true
+            }
+
+            if (inComments == "") {
+                document.getElementById("lblComments").style.backgroundColor = "red"
+                result = false
+            } else {
+                document.getElementById("lblComments").style.backgroundColor = "lightgrey"
+                result = true
+            }
+
+            if (!result) {
+                document.getElementById("msg").innerHTML = "Please enter valid data in highlighted fields."
+                result = false
+            }   
+
+            return result  
+        }
+    </script>
+    <form action="response.html" medhod="post" onsubmit="return validateForm()">
+    
+        <table width="450px" style="background-color: lightgray">
+    
+            <tr>
+                <td valign="top">
+                    <label for="first_name" id="lblFirstName">First Name *</label>
+                </td>
+                <td valign="top">
+                    <input type="text" name="first_name" id="firstName" maxlength="50" size="30">
+                </td>
+            </tr>
+    
+            <tr>
+                <td valign="top">
+                    <label for="last_name" id="lblLastName">Last Name *</label>
+                </td>
+                <td valign="top">
+                    <input type="text" name="last_name" id="lastName" maxlength="50" size="30">
+                </td>
+            </tr>
+    
+            <tr>
+                <td valign="top">
+                    <label for="email" id="lblEmail">Email Address *</label>
+                </td>
+                <td valign="top">
+                    <input type="text" name="email" id="emailAddress" maxlength="80" size="30">
+                </td>
+            </tr>
+    
+            <tr>
+                <td valign="top">
+                    <label for="telephone" id="lblTelephone">Telephone Number *</label>
+                </td>
+                <td valign="top">
+                    <input type="text" name="telephone" id="telephoneNumber" maxlength="30" size="30">
+                </td>
+            </tr>
+    
+            <tr>
+                <td valign="top">
+                    <br>
+                    <label>Jersey Style</label>
+                </td>
+                <td valign="top">
+                    <br>
+                    <select name="style">
+                        <option value="Collar">Collar</option>
+                        <option value="Mock Neck" selected>Mock Neck</option>
+                        <option value="T-Shirt">T-Shirt</option>
+                    </select>
+                </td>
+            </tr>
+    
+            <tr>
+                <td valign="top">
+                    <br>
+                    <label>Size</label>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <input type="radio" name="size" value="Small"> Small<br>
+                    <input type="radio" name="size" value="Medium"> Medium<br>
+                    <input type="radio" name="size" value="Large" checked> Large<br>
+                </td>
+            </tr>
+    
+            <tr>
+                <td valign="top">
+                    <br>
+                    <label>Color</label>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <input type="radio" name="color" value="Red" checked> Red<br>
+                    <input type="radio" name="color" value="white"> White <br>
+                    <input type="radio" name="color" value="Blue"> Blue<br>
+                </td>
+            </tr>
+    
+    
+            <tr>
+                <td valign="top">
+                    <br>
+                    <label for="comments" id="lblComments">Comments *</label>
+                </td>
+                <td valign="top">
+                    <br>
+                    <textarea name="comments" id="comments" maxlength="1000" cols="25" rows="6"></textarea>
+                </td>
+            </tr>
+    
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+    
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <p id="msg" style="font-weight: bold; color: red;"></p>
+                </td>
+            </tr>
+    
+        </table>
+    </form>
+</body>
+</html>
